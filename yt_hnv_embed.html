@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtubePlayer', {
+                events: {
+                    'onReady': function(event) {
+                        event.target.setPlaybackQuality('hd1080'); // Force HD quality
+                        event.target.playVideo(); // Ensure autoplay
+                    }
+                }
+            });
+        }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+    <iframe id="youtubePlayer" width="1920" height="1080" 
+        src="https://www.youtube.com/watch?v=rDzO9kcNJ5Y?enablejsapi=1&autoplay=1" 
+        frameborder="0" allowfullscreen>
+    </iframe>
+</body>
+</html>
